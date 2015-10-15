@@ -21,3 +21,9 @@ insecure                # Allow all DB writes from clients (for prototyping)
 aldeed:collection2
 accounts-facebook
 service-configuration
+meteorhacks:npm
+iron:router
+
+
+npm-container
+twbs:bootstrap
