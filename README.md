@@ -9,11 +9,11 @@ MVP for Livrit Accessible Navigation API (http://livrit.com.br)
 
 # executar a aplicação
 - Navegar até o diretório do projeto (Exemplo: cd ~/livrit)
-  -ambiente localhost
+  * ambiente localhost
     - executar: meteor --settings private/localhost.json
-  - ambiente de testes (http://livrit.meteor.com)
+  * ambiente de testes (http://livrit.meteor.com)
     - executar: meteor --settings private/test.json
-  - ambiente de produção (http://app.meteor.com) (!!! AINDA NÃO ESTÁ PRONTO !!!)
+  * ambiente de produção (http://app.meteor.com) (!!! AINDA NÃO ESTÁ PRONTO !!!)
     - executar: meteor --settings private/production.json
 
 # Deploy no servidor de Produção
