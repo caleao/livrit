@@ -27,3 +27,5 @@ iron:router
 
 npm-container
 twbs:bootstrap
+fastclick
+chriswessels:hammer
