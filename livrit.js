@@ -62,11 +62,27 @@ if (Meteor.isClient) {
   Template.livritNavigator.onCreated(function() {
     // We can use the `ready` callback to interact with the map API once the map is ready.
     GoogleMaps.ready('mainMap', function(map) {
+
       // Add a marker to the map once it's ready
+      /*
       var marker = new google.maps.Marker({
         position: map.options.center,
         map: map.instance
       });
+      */
+      var routeSegment = [
+        {lat: -22.896078, lng:-43.181556},
+        {lat: -22.897288, lng:-43.182078}
+      ];
+
+      var routePath = new google.maps.Polyline({
+        path: routeSegment,
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2,
+        map: map.instance
+      })
     });
   });
 }
