@@ -14,6 +14,11 @@ configureFacebook = function(config) {
 // set the settings object with meteor --settings private/localhost.json
 var facebookConfig = Meteor.settings.facebook;
 if(facebookConfig) {
-    console.log('Got settings for facebook', facebookConfig.clientId)
+    console.log('Got settings for Facebook. API Key:', facebookConfig.clientId)
     configureFacebook(facebookConfig);
+}
+
+var googleAPIKey = Meteor.settings.public.googleAPIKey;
+if(googleAPIKey) {
+    console.log('Got settings for Google. API Key:', googleAPIKey)
 }

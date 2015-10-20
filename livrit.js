@@ -1,5 +1,9 @@
 if (Meteor.isClient) {
 
+  Meteor.startup(function() {
+    GoogleMaps.load({key: Meteor.settings.public.googleAPIKey});
+  });
+
   Router.onBeforeAction(function() {
     if (! Meteor.userId()) {
       this.render('wellcome');
@@ -7,66 +11,64 @@ if (Meteor.isClient) {
       this.next();
     }
   });
-  /*
-  Router.configure({
-    layoutTemplate: 'appLayout'
-  });
-  */
 
   // Routes
   Router.route('/', function () {
-      this.layout('appLayout');
-      this.render('livritNavigator');
-      this.render('sidebarMenu', {to: 'sidebarNav'});
+    this.layout('appLayout');
+    this.render('livritNavigator');
+    this.render('sidebarMenu', {to: 'sidebarNav'});
+  });
+
+  Template.wellcome.events({
+    'click #facebook-login': function(event) {
+      Meteor.loginWithFacebook({}, function(err){
+        if (err) {
+          throw new Meteor.Error("Facebook login failed");
+        }
+      });
+    }
+  });
+
+  Template.sidebarMenu.events({
+    'click #logout': function(event) {
+      Meteor.logout(function(err){
+        if (err) {
+          throw new Meteor.Error("Logout failed");
+        }
+      })
+    }
   });
 
 
-  // counter starts at 0
-  //Session.setDefault('counter', 0);
+  Template.livritNavigator.events({
+    "click #menu-toggle": function(event, template){
+      $("#wrapper").toggleClass("toggled");
+    }
+  });
 
-  /*
-  Template.hello.helpers({
-  counter: function () {
-  return Session.get('counter');
-}
-});
-
-Template.hello.events({
-'click button': function () {
-// increment the counter when button is clicked
-Session.set('counter', Session.get('counter') + 1);
-}
-});
-*/
-
-Template.wellcome.events({
-  'click #facebook-login': function(event) {
-    Meteor.loginWithFacebook({}, function(err){
-      if (err) {
-        throw new Meteor.Error("Facebook login failed");
+  Template.livritNavigator.helpers({
+    mainMapOptions: function() {
+      // Make sure the maps API has loaded
+      if (GoogleMaps.loaded()) {
+        // Map initialization options
+        return {
+          center: new google.maps.LatLng(-22.896041, -43.181506),
+          zoom: 17
+        };
       }
+    }
+  });
+
+  Template.livritNavigator.onCreated(function() {
+    // We can use the `ready` callback to interact with the map API once the map is ready.
+    GoogleMaps.ready('mainMap', function(map) {
+      // Add a marker to the map once it's ready
+      var marker = new google.maps.Marker({
+        position: map.options.center,
+        map: map.instance
+      });
     });
-  }
-});
-
-Template.sidebarMenu.events({
-  'click #logout': function(event) {
-    Meteor.logout(function(err){
-      if (err) {
-        throw new Meteor.Error("Logout failed");
-      }
-    })
-  }
-});
-
-
-Template.livritNavigator.events({
-"click #menu-toggle": function(event, template){
-$("#wrapper").toggleClass("toggled");
-}
-});
-
-
+  });
 }
 
 if (Meteor.isServer) {

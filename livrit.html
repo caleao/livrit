@@ -26,70 +26,66 @@
 
   <div id="wrapper">
 
-          <!-- Sidebar -->
-          <div id="sidebar-wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
 
-              {{> yield "sidebarNav"}}
+      {{> yield "sidebarNav"}}
 
-          </div>
-          <!-- /#sidebar-wrapper -->
+    </div>
+    <!-- /#sidebar-wrapper -->
 
-          <!-- Page Content -->
-          <div id="page-content-wrapper">
-              <div class="container-fluid">
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
 
-                {{> yield}}
-
-              </div>
-          </div>
-          <!-- /#page-content-wrapper -->
+        {{> yield}}
 
       </div>
-      <!-- /#wrapper -->
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
 
 </template>
 
 <template name="livritNavigator">
-  <div class="row">
-      <div class="col-lg-12">
-          <h1>Livrit Navigator</h1>
-          <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-          <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-          <br />
-          <button id="menu-toggle" class="btn btn-default">Toggle Menu</button>
-      </div>
+  <div class="map-container">
+    {{> googleMap name="mainMap" options=mainMapOptions}}
   </div>
+  <br />
+  <button id="menu-toggle" class="btn btn-default">Toggle Menu</button>
 </template>
 
 <template name="sidebarMenu">
 
   <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-          <a href="#">
-              Side Menu
-          </a>
-      </li>
-      <li>
-          <a href="#">Dashboard</a>
-      </li>
-      <li>
-          <a href="#">Shortcuts</a>
-      </li>
-      <li>
-          <a href="#">Overview</a>
-      </li>
-      <li>
-          <a href="#">Events</a>
-      </li>
-      <li>
-          <a href="#">About</a>
-      </li>
-      <li>
-        {{currentUser._id}} -
-        {{currentUser.services.facebook.name}} -
-        {{currentUser.services.facebook.gender}}
-        <button id="logout">Logout</button>
-      </li>
+    <li class="sidebar-brand">
+      <a href="#">
+        Side Menu
+      </a>
+    </li>
+    <li>
+      <a href="#">Dashboard</a>
+    </li>
+    <li>
+      <a href="#">Shortcuts</a>
+    </li>
+    <li>
+      <a href="#">Overview</a>
+    </li>
+    <li>
+      <a href="#">Events</a>
+    </li>
+    <li>
+      <a href="#">About</a>
+    </li>
+    <li>
+      {{currentUser._id}} -
+      {{currentUser.services.facebook.name}} -
+      {{currentUser.services.facebook.gender}}
+      <button id="logout">Logout</button>
+    </li>
   </ul>
 
 </template>
