@@ -15,8 +15,10 @@ if (Meteor.isClient) {
   // Routes
   Router.route('/', function () {
     this.layout('appLayout');
-    this.render('livritNavigator');
-    this.render('sidebarMenu', {to: 'sidebarNav'});
+    this.render('mainMap');
+    this.render('sideBar', {to: 'sideBar'});
+    this.render('navBar', {to: 'navBar'});
+    this.render('userBar', {to: 'userBar'});
   });
 
   Template.wellcome.events({
@@ -29,7 +31,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.sidebarMenu.events({
+  Template.sideBar.events({
     'click #logout': function(event) {
       Meteor.logout(function(err){
         if (err) {
@@ -39,19 +41,32 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.sideBar.rendered = function() {
+    //$('head').append('<script type="text/javascript" src="js/sidebar.js"></script>');
+  }
 
-  Template.livritNavigator.events({
-    "click #menu-toggle": function(event, template){
-      $("#wrapper").toggleClass("toggled");
+
+  Template.navBar.events({
+    "click #sidebar-toggle": function(event, template){
+      /*$("#wrapper").toggleClass("toggled");*/
+      $("#wrapper").removeClass("toggled");
     }
   });
 
-  Template.livritNavigator.helpers({
+  Template.sideBar.events({
+    "click #sidebar-hide": function(event, template){
+      /*$("#wrapper").toggleClass("toggled");*/
+      $("#wrapper").addClass("toggled");
+    }
+  });
+
+  Template.mainMap.helpers({
     mainMapOptions: function() {
       // Make sure the maps API has loaded
       if (GoogleMaps.loaded()) {
         // Map initialization options
         return {
+          disableDefaultUI: true, // hide all controls,
           center: new google.maps.LatLng(-22.896041, -43.181506),
           zoom: 17
         };
@@ -59,7 +74,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.livritNavigator.onCreated(function() {
+  Template.mainMap.onCreated(function() {
 
     GoogleMaps.ready('mainMap', function(map) {
 
