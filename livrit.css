@@ -37,3 +37,7 @@ html, body, #wrapper, #page-content-wrapper, .map-container {
   font-size: medium;
 }
 */
+
+#directions-button {
+  color: #679df6;
+}
