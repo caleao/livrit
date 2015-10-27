@@ -35,21 +35,19 @@
     <!-- USER BAR -->
     <!--
     <div class="userbar-wrapper">
-    {{> yield "userBar"}}
+      {{> yield "userBar"}}
+    </div>
+    -->
+
+    <!-- SIDEBAR MENU -->
+    {{> yield "sideBar"}}
+
+    <!-- MAIN CONTENT -->
+    <div id="page-content-wrapper">
+      {{> yield}}
+    </div>
+
   </div>
--->
-
-<!-- SIDEBAR MENU -->
-<div id="sidebar-wrapper">
-  {{> yield "sideBar"}}
-</div>
-
-<!-- MAIN CONTENT -->
-<div id="page-content-wrapper">
-  {{> yield}}
-</div>
-
-</div>
 
 </template>
 
@@ -91,15 +89,10 @@
       </ul>
 
 
-      </div>
+    </div>
 
-    </nav>
-    <!--
-    <div class="menu-toggle"><i class="fa fa-navicon"></i> Menu</div>
-    <div class="search-form"></div>
-    <div class="search-button"><i class="fa fa-search"></i> Search</div>
-    <div class="directions-button"><i class="fa fa-wheelchair"></i> Directions</div>
-  -->
+  </nav>
+
 </template>
 
 <template name="userBar">
@@ -119,26 +112,30 @@
 </template>
 
 <template name="sideBar">
-  <ul class="sidebar-nav">
-    <li class="sidebar-brand">
-      <a href="#">
-        Camadas
-      </a>
-    </li>
-    <li>
-      <a href="#">Caminhos</a>
-    </li>
-    <li>
-      <a href="#">Lugares</a>
-    </li>
-    <li>
-      <a href="#">Barreiras</a>
-    </li>
-    <li>
-      <a href="#" class="btn btn-default" id="sidebar-hide">
-        <i class="fa fa-angle-double-left"></i>
-      </a>
-    </li>
-  </ul>
 
+  <div id="sidebar-overlay"></div>
+  <div id="sidebar-wrapper" class="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#">
+          Camadas
+        </a>
+      </li>
+      <li>
+        <a href="#">Caminhos</a>
+      </li>
+      <li>
+        <a href="#">Lugares</a>
+      </li>
+      <li>
+        <a href="#">Barreiras</a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-default" id="sidebar-hide">
+          <i class="fa fa-angle-double-left"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
 </template>
