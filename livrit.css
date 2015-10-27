@@ -31,6 +31,10 @@ html, body, #wrapper, #page-content-wrapper, .map-container {
   box-shadow: 0 2px 4px rgba(0,0,0,0.2),0 -1px 0px rgba(0,0,0,0.02);
 }
 
+.btn.btn-default {
+  color: #999999;
+}
+
 /*
 #navbar-wrapper a.btn.btn-default  {
   border: 0px;

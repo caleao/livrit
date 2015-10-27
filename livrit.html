@@ -68,11 +68,11 @@
         </li>
       </ul>
 
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left" role="search" id="navbar-form" onsubmit="event.preventDefault();">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Buscar no Livrit..." id="search-input">
         </div>
-        <button type="submit" class="btn btn-default">
+        <button class="btn btn-default" id="search-submit">
           <!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>-->
           <i class="fa fa-search"></i>
         </button>
@@ -117,25 +117,29 @@
   <div id="sidebar-wrapper" class="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
+        <strong>Livrit</strong>
+        <a class="sidebar-close-btn" href="" id="sidebar-hide">
+          <i class="fa fa-angle-double-left"> </i>
+        </a>
+      </li>
+      <li>
         <a href="#">
-          Camadas
+          <i class="fa fa-wheelchair">&nbsp;&nbsp;&nbsp;</i>Caminhos Acessíveis
+        </a>
+      </li>
+      <li role="separator" class="divider"></li>
+      <li>
+        <a href="#">
+          <i class="fa fa-building-o"></i>&nbsp;&nbsp;&nbsp;Lugares Acessíveis
         </a>
       </li>
       <li>
-        <a href="#">Caminhos</a>
-      </li>
-      <li>
-        <a href="#">Lugares</a>
-      </li>
-      <li>
-        <a href="#">Barreiras</a>
-      </li>
-      <li>
-        <a href="#" class="btn btn-default" id="sidebar-hide">
-          <i class="fa fa-angle-double-left"></i>
+        <a href="#">
+          <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;Barreiras
         </a>
       </li>
+      <li><hr></li>
     </ul>
   </div>
-  
+
 </template>

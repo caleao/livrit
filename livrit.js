@@ -41,6 +41,12 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.navBar.events({
+    'click #search-submit': function(event) {
+      gmaps.submitSearch();
+    }
+  });
+
   Template.mainMap.helpers({
     mainMapOptions: function() {
       return gmaps.loadOptions();
@@ -59,7 +65,18 @@ if (Meteor.isClient) {
 
     });
 
+    $("search-input").focusin(function () {
+      $(document).keypress(function (e) {
+        if (e.which == 13) {
+          gmaps.submitSearch();
+        } else {
+          $(".pac-container").css("visibility","visible");
+        }
+      });
+    });
+
   });
+
 }
 
 if (Meteor.isServer) {
