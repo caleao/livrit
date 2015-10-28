@@ -1,0 +1,8 @@
+1AA1D4 AZUL
+FF6400 LARANJA
+
+
+azul - 1fbeff
+verde - 15d1c0
+laranja - ff771f
+cinza - 6d8ca0

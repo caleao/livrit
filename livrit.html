@@ -13,13 +13,22 @@
 
 <template name="wellcome">
 
-  <img alt="Livrit" src="/images/livrit_logo.jpg" />
+  <div id="wellcome_wrapper">
 
-  <p>seu caminho livre</p>
+    <div id="wellcome_brand" class="center">
 
-  <br />
+      <img class="logo_img" alt="Livrit" src="img/logo_livrit_white.png" />
 
-  <button id="facebook-login" class="btn btn-default"> Login with Facebook</button>
+      <h4>seu caminho livre</h4>
+
+      <a href="" class="btn btn-default" id="facebook-login">
+        <span class="btn-icon"><i class="fa fa-facebook-official"></i></span>
+        <span class="btn-text">acessar com o Facebook</span>
+      </a>
+
+    </div>
+
+  </div>
 
 </template>
 
@@ -33,11 +42,9 @@
     </div>
 
     <!-- USER BAR -->
-    <!--
     <div class="userbar-wrapper">
       {{> yield "userBar"}}
     </div>
-    -->
 
     <!-- SIDEBAR MENU -->
     {{> yield "sideBar"}}
@@ -96,6 +103,7 @@
 </template>
 
 <template name="userBar">
+  <!--
   <div class="userThumb">User Photo</div>
   <div class="userInfo">
     {{currentUser._id}} -
@@ -103,6 +111,7 @@
     {{currentUser.services.facebook.gender}}
     <button id="logout">Logout</button>
   </div>
+  -->
 </template>
 
 <template name="mainMap">

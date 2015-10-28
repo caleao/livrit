@@ -1,14 +1,65 @@
-html, body, #wrapper, #page-content-wrapper, .map-container {
+html, body, #wrapper, #page-content-wrapper, .map-container  {
   width: 100%;
   height: 100%;
+  min-height: 100% !important;
   margin: 0;
   padding: 0;
 
   font-family: 'Open Sans', sans-serif;
 }
 
+#wellcome_wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 100% !important;
+  background: #1aa1d4;
+  position: absolute;
+  text-align: center;
+}
+
+#wellcome_brand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 50%;
+  color: #005474 ;
+}
+
+#wellcome_brand h4 {
+  margin-bottom: 30px;
+}
+
+#wellcome_brand .btn.btn-default {
+  line-height: 3em;
+  background: #46629E;
+  border: none;
+}
+
+#wellcome_brand .btn.btn-default:hover {
+  background: #5F7DBD;
+}
+
+#wellcome_brand .btn-icon {
+  font-size: 2em;
+  margin: 0px 10px 0px 5px;
+  color: #fff;
+  vertical-align: middle;
+}
+
+#wellcome_brand .btn-text {
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 #wrapper, #page-content-wrapper, .map-container {
   position: relative;
+}
+
+#wellcome_wrapper {
+  background: #
 }
 
 .map-container {
