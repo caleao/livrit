@@ -43,7 +43,7 @@
     </div>
 
     <!-- USER BAR -->
-    <div class="userbar-wrapper">
+    <div id="userbar-wrapper">
       {{> yield "userBar"}}
     </div>
 
@@ -104,15 +104,18 @@
 </template>
 
 <template name="userBar">
+
+  <img class="user_pic" src="http://graph.facebook.com/{{currentUser.services.facebook.id}}/picture/?type=small" />
+  <button id="logout">Sair</button>
+
   <!--
-  <div class="userThumb">User Photo</div>
-  <div class="userInfo">
-  {{currentUser._id}} -
+  {{currentUser._id}}
   {{currentUser.services.facebook.name}} -
   {{currentUser.services.facebook.gender}}
-  <button id="logout">Logout</button>
-</div>
--->
+  -->
+
+
+
 </template>
 
 <template name="mainMap">
@@ -127,7 +130,7 @@
   <div id="sidebar-wrapper" class="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
-        <strong>Livrit</strong>
+        <img alt="Livrit - seu caminho livre" src="img/logo_livrit_color_small.png" />
         <a class="sidebar-close-btn" href="" id="sidebar-hide">
           <i class="fa fa-angle-double-left"> </i>
         </a>

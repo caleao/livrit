@@ -79,6 +79,22 @@ html, body, #wrapper, #page-content-wrapper, .map-container  {
   background: #
 }
 
+#userbar-wrapper {
+  position: absolute;
+  float: right;
+  right: 30px;
+  top: 20px;
+  z-index: 101;
+}
+
+#userbar-wrapper .user_pic {
+  border-radius: 3px;
+  height: 28px;
+  width: 28px;
+  margin-right: 10px;
+}
+
+
 .map-container {
   z-index: 99;
 }

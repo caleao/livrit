@@ -37,7 +37,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.sideBar.events({
+  Template.userBar.events({
     'click #logout': function(event) {
       Meteor.logout(function(err){
         if (err) {
