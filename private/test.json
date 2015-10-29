@@ -1,6 +1,9 @@
 {
-    "facebook" : {
-        "clientId": "1532247407065644",
-        "secret": "9db80a3593f1bb0550878fd25f4aa74f"
-    }
+  "facebook" : {
+    "clientId": "1532247407065644",
+    "secret": "9db80a3593f1bb0550878fd25f4aa74f"
+  },
+  "public" : {
+    "googleAPIKey":"AIzaSyBxR5x13C0o44cB1Z7p7ak8V1ZFoMImp_M"
+  }
 }
