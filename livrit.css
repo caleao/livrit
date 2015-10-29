@@ -54,6 +54,23 @@ html, body, #wrapper, #page-content-wrapper, .map-container  {
   vertical-align: middle;
 }
 
+#wellcome_about {
+  text-align: right;
+  position: absolute;
+  float: right;
+  right: 30px;
+  bottom: 20px;
+}
+
+#wellcome_about, #wellcome_about a {
+  color: #fff;
+}
+
+#wellcome_about #version {
+  color: #06749e;
+  font-size: smaller;
+}
+
 #wrapper, #page-content-wrapper, .map-container {
   position: relative;
 }

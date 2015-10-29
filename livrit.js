@@ -21,6 +21,12 @@ if (Meteor.isClient) {
     this.render('userBar', {to: 'userBar'});
   });
 
+  Template.wellcome.helpers({
+    version:function(){
+      return Version.findOne();
+    }
+  })
+
   Template.wellcome.events({
     'click #facebook-login': function(event) {
       Meteor.loginWithFacebook({}, function(err){

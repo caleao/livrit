@@ -16,22 +16,17 @@
   <div id="wellcome_wrapper">
 
     <div id="wellcome_brand" class="center">
-
       <img class="logo_img" alt="Livrit" src="img/logo_livrit_white.png" />
-
       <h4>seu caminho livre</h4>
-
       <a href="" class="btn btn-default" id="facebook-login">
         <span class="btn-icon"><i class="fa fa-facebook-official"></i></span>
         <span class="btn-text">acessar com o Facebook</span>
       </a>
+    </div>
 
-      <div id="wellcome_about">
-        <a href="http://livrit.com.br">sobre</a>
-        <span id="version">{{version.commit}} - {{version.branch}} - {{version.timestamp}}</span>
-      </div>
-
-
+    <div id="wellcome_about">
+      <a href="http://livrit.com.br">sobre: http://livrit.com.br</a>
+      <p><span id="version">build-version: {{version.commit}} - {{version.branch}} - {{version.timestamp}}</span></p>
     </div>
 
   </div>
@@ -112,12 +107,12 @@
   <!--
   <div class="userThumb">User Photo</div>
   <div class="userInfo">
-    {{currentUser._id}} -
-    {{currentUser.services.facebook.name}} -
-    {{currentUser.services.facebook.gender}}
-    <button id="logout">Logout</button>
-  </div>
-  -->
+  {{currentUser._id}} -
+  {{currentUser.services.facebook.name}} -
+  {{currentUser.services.facebook.gender}}
+  <button id="logout">Logout</button>
+</div>
+-->
 </template>
 
 <template name="mainMap">
