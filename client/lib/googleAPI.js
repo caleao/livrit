@@ -118,8 +118,30 @@ gmaps = {
   },
 
 
-  plotRouteSegments: function(map) {
+  plotRouteSegments: function() {
 
+    gmaps.map.addListener('zoom_changed', function() {
+        //zoomLevel = gmaps.map.getZoom();
+        //console.log("zoomLevel = ", zoomLevel);
+        checkConditionsToPlot();
+    });
+
+    gmaps.map.addListener('center_changed', function() {
+        //center = gmaps.map.getCenter()
+        //console.log("center = ", center);
+        checkConditionsToPlot();
+    });
+
+  }
+
+}
+
+function checkConditionsToPlot() {
+  zoomLevel = gmaps.map.getZoom();
+  if (zoomLevel > 15) {
+    //console.log('zoomLevel: ', zoomLevel);
+
+    /*
     // plotar polyline
     var routeSegment = [
       {lat: -22.896078, lng:-43.181556},
@@ -134,7 +156,7 @@ gmaps = {
       strokeWeight: 2,
       map: map.instance
     })
+    */
 
   }
-
 }

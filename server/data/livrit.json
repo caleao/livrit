@@ -1,0 +1,33 @@
+{
+  "type": "RouteSegmentCollection",
+  "routeSegments": [
+    {
+      "accessibilityLevel": 2,
+      "type": "LineString",
+      "coordinates": [
+        [
+          -43.183849453926086,
+          -22.896788758551157
+        ],
+        [
+          -43.18247079849243,
+          -22.897253281370737
+        ]
+      ]
+    },
+    {
+      "accessibilityLevel": 1,
+      "type": "LineString",
+      "coordinates": [
+        [
+          -43.18380117416382,
+          -22.896704748935218
+        ],
+        [
+          -43.182379603385925,
+          -22.89718409722182
+        ]
+      ]
+    }
+  ]
+}

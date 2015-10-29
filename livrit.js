@@ -67,7 +67,7 @@ if (Meteor.isClient) {
 
       gmaps.initAutocomplete();
 
-      //gmaps.plotRouteSegments();
+      gmaps.plotRouteSegments();
 
     });
 
