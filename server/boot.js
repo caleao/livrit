@@ -22,3 +22,10 @@ var googleAPIKey = Meteor.settings.public.googleAPIKey;
 if(googleAPIKey) {
     console.log('Got settings for Google. API Key:', googleAPIKey)
 }
+
+Meteor.startup(function(){
+    if (Version.find().count() > 0){
+        Version.remove({});
+    }
+    Version.insert(JSON.parse(Assets.getText("version.json")));
+})
